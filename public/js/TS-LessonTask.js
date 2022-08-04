@@ -103,26 +103,68 @@ console.group('10. Sukurkite funkciją, kuri priima skaičių masyvą ir grąži
 console.groupEnd();
 console.group('11. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo elementų ir jų indeksų sandaugos');
 {
+    const indexTimesValuesArr = (arr) => {
+        const index = arr.map((x) => {
+            const Index = arr.indexOf(x);
+            const combinedNewArr = arr[Index] * Index;
+            return combinedNewArr;
+        });
+        return index;
+    };
+    console.log(indexTimesValuesArr(numbers));
 }
 console.groupEnd();
 console.group('12. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo teigiamų elementų');
 {
+    const nums = [1, 5, -6, 10, -19, 35, -99];
+    const FilterPositiveNums = (arr) => {
+        const PositiveNums = arr.filter((num) => num > 0);
+        return PositiveNums;
+    };
+    console.log(FilterPositiveNums(nums));
 }
 console.groupEnd();
 console.group('13. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo NE-teigiamų elementų');
 {
+    const nums = [1, 5, -6, 10, -19, 35, -99];
+    const FilterSickNegativeNums = (arr) => {
+        const SickNegativeNums = arr.filter((num) => num < 0);
+        return SickNegativeNums;
+    };
+    console.log(FilterSickNegativeNums(nums));
 }
 console.groupEnd();
 console.group('14. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo lyginių elementų');
 {
+    const nums = [1, 5, -6, 10, -19, 35, -99];
+    const FilterEvenNums = (arr) => {
+        const EvenNums = arr.filter((num) => num % 2 === 0);
+        return EvenNums;
+    };
+    console.log(FilterEvenNums(nums));
 }
 console.groupEnd();
 console.group('15. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo nelyginių elementų');
 {
+    const nums = [1, 5, -6, 10, -19, 35, -99];
+    const FilterNotEvenNums = (arr) => {
+        const EvilNotEvenNums = arr.filter((num) => num % 2 !== 0);
+        return EvilNotEvenNums;
+    };
+    console.log(FilterNotEvenNums(nums));
 }
 console.groupEnd();
 console.group('16. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo, paverstų teigiamais, elementų');
 {
+    const nums = [1, 5, -6, 10, -19, 35, -99];
+    const mixedValuesNums = (arr) => {
+        const NegNums = arr.filter((x) => x < 0);
+        const NegToPosNum = NegNums.map((NegNum) => NegNum * -1);
+        const PosNums = arr.filter((x) => x > 0);
+        const newArr = NegToPosNum.concat(PosNums);
+        return newArr;
+    };
+    console.log(mixedValuesNums(nums));
 }
 console.groupEnd();
 console.groupEnd();
